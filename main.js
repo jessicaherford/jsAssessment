@@ -85,6 +85,9 @@ var bedroom = ['bed', 'nightstand', 'television', 'Channing Tatum']
 // 39. Add the option of converting to Euros. First ask the user which currency they want the conversion for, then ask for the dollar amount.
 // 40. Write a function that returns an object of duplicate letters in an string.
 //     "Baby Aaron" should return {"b":2, "a":3}
+// BONUS: Write a function named pluralize that takes 2 arguments, a noun and a number. It returns the number and pluralized form, like "5 cats" or "1 dog".
+//        Make it handle a few collective nouns like "sheep" and "geese"
+//
 // =========================== jQuery =========================
 // 41. Add the jQuery CDN script to index.html
 $(document).ready(function(){
