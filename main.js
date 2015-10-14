@@ -85,4 +85,28 @@ var bedroom = ['bed', 'nightstand', 'television', 'Channing Tatum']
 // 39. Add the option of converting to Euros. First ask the user which currency they want the conversion for, then ask for the dollar amount.
 // 40. Write a function that returns an object of duplicate letters in an string.
 //     "Baby Aaron" should return {"b":2, "a":3}
+// =========================== jQuery =========================
 // 41. Add the jQuery CDN script to index.html
+$(document).ready(function(){
+
+// 42. Turn the square into a circle.
+
+// 43. When the 'Fade' button is clicked, have your circle fade in/out with any speed you like.
+//     Hint: http://api.jquery.com/fadetoggle/
+
+// 44. Put your name on the page.
+
+// 45. Add some flair to your name when you click the 'Stylize!' button.
+//     Feel free to edit the HTML however you see fit.
+
+// 46. Create as many pacman clones as you see fit.
+
+// 47. Add the class 'invisible' to each list item when they are hovered over.
+
+// 48. When either square is clicked, have them swap colors.
+
+// 49. When you click the vertical button, the squares above should align vertically.
+
+// 50. Unhide the message.
+
+});

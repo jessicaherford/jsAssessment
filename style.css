@@ -1,0 +1,58 @@
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+h2 {
+  margin-left: 5%;
+}
+
+.queryBlock {
+  margin-bottom: 100px;
+  margin-left: 5%;
+}
+
+.square, .circle {
+  height: 120px;
+  width: 120px;
+  background-color: #910D35;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+#name {
+  display: inline;
+}
+
+#hoverHide {
+  list-style: none;
+  width: 15%;
+  padding: 10px;
+  border: 1px solid #000;
+}
+
+.invisible {
+  color: #fff;
+}
+
+.colorSwap {
+  height: 150px;
+  width: 150px;
+  display: inline-block;
+}
+
+.left {
+  margin-right: 30px;
+  background-color: #458B00;
+}
+
+.right {
+  background-color: #FCDC3B;
+}
+
+.fin {
+  display: none;
+  font-size: 100px;
+}
