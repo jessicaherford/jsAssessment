@@ -1,4 +1,5 @@
 // 1.  Log your last name to the console.
+console.log('Herford');
 // 2.  Declare a variable called "movie" and log it to the console.
 // 3.  Declare three variables with integer values. Add the first two, then multiply that sum by the third.
 // 4.  Declare two variable with string values. Declare a third varible that concatenates the first two.
