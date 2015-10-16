@@ -23,24 +23,22 @@ console.log(userInput * 100);*/
 
 
 // 6.  Prompt a user to enter his/her name, favorite band, and the year they were born. Log the sentence:
-/*var userAnswer = prompt('Please enter your name, favorite band, and the year you were born.');
-console.log(userAnswer);
-function userSentence(a, b, c){
-  parseInt(c);
-  console.log(c);
-  var age = 2015 - c;
+/*var userAnswerName = prompt('Please enter your name.');
+var userAnswerBand = prompt('Please enter your favorite band.')
+var userAnswerAge = prompt('Please enter the year you were born.');
+  parseInt(userAnswerAge);
+  var age = 2015 - userAnswerAge;
   console.log(age);
-  console.log('My name is ' + a +',' + 'and I am ' + age + ' year old fan of ' + b + '.');
-}
-userSentence(userAnswer);*/
+  console.log('My name is ' + userAnswerName + ',' + ' and I am a ' + age + ' year old fan of ' + userAnswerBand + '.');
+*/
 //     "My name is ______, and I'm ___ year old fan of ________."
 // 7.  Create an alert that uses the response from a prompt.
 //var userPrompt = prompt("What is your name?");
 //alert('Hi ' + userPrompt + '!');
 
 // 8.  Declare an array with six items. Do this two different ways.
-var sixArray = [ 'Swim', 'Run', 'Hike', 'Bike', 'Climb', 'Ski' ];
-var sixArray2 = {
+var sports = [ 'Swim', 'Run', 'Hike', 'Bike', 'Climb', 'Ski' ];
+var sports1 = {
   0: 'Swim',
   1: 'Run',
   2: 'Hike',
@@ -51,24 +49,24 @@ var sixArray2 = {
 
 
 // 9.  Add two additional items to the beginning of the array.
-sixArray.unshift('Snowboard', 'Walk');
-console.log(sixArray);
+sports.unshift('Snowboard', 'Walk');
+console.log(sports);
 // 10. Remove the last two items.
-sixArray.pop();
-sixArray.pop();
+sports.pop();
+sports.pop();
 
-console.log(sixArray);
+console.log(sports);
 // 11. Add one item between the 2nd and 3rd item.
-sixArray.splice(2, 0, 'Kayak');
-console.log(sixArray);
+sports.splice(2, 0, 'Kayak');
+console.log(sports);
 
 // 12. Combine all of the elements of the array into a string.
-/*sixArray = sixArray.join(' ');
-console.log(sixArray);*/
+/*sports = sports.join(' ');
+console.log(sports);*/
 
 // 13. Arrange the items alphabetically.
-sixArray = sixArray.sort();
-console.log(sixArray);
+sports = sports.sort();
+console.log(sports);
 
 // 14. Create and array of three arrays: colors, names, and schools. Each inner array should have three items.
 var things = [
@@ -179,26 +177,187 @@ for(counter = 0; counter<6; counter++){
   console.log("This loop is number " + counter);
 }
 // 31. Prompt a user to pick either a number or a word. Create a script that alerts the user whether they chose a number or a word.
+//(isNaN(userWordNumber);
+var userWordNumber = prompt("Please pick a number or a word!");
+
+userWordNumber = parseInt(userWordNumber);
+
+if(isNaN(userWordNumber)){
+  alert('You picked a word!');
+}
+else{
+  alert('You picked a number!');
+}
+
+
+
+
+
+
 // 32. Use Math.floor and Math.random to roll two six sided dice for two players. Determine which player wins with the higher roll.
+
+ var playerOneDie = Math.floor(Math.random() * 6 + 1);
+ var playerTwoDie = Math.floor(Math.random() * 6 + 1);
+ console.log(playerOneDie, playerTwoDie);
+if(playerOneDie > playerTwoDie){
+  console.log('Player One Wins!');
+}
+else if(playerOneDie === playerTwoDie){
+  console.log('It is a tie!');
+}
+else{
+  console.log('Player Two Wins!');
+}
+
 // 33. Define a function called "divideByThree". It should accept one parameter called "number".
 //     The function should divide the number by three and output the answer.
 //     If the number is not divisible by three with a remainder of zero, alert the user that their number is invalid.
+
+function divideByThree(number){
+  if(number%3 !== 0){
+    alert('That number is not divisable by 3!');
+  }
+  else{
+    var answer = number/3;
+    console.log(answer);
+  }
+}
+
+//divideByThree(9);
+//divideByThree(8);
+
 // 34. Write a function that accepts the following array and separates the people into men and women.
 //     HINT: The men are even and the women are odd.
        battingLineUp= ["Henry", "Shirley", "Mark", "Tina", "Max", "Sara", "Eric", "Lisa", "Ralph", "Connie", "Drew"]
+
+var girls = [];
+var boys = [];
+
+
+function battleOfTheSexes(array){
+  for(i=0;i<array.length; i++){
+    if( i%2 === 0 ){
+      boys.push(array[i]);
+    }
+    else
+    {
+    girls.push(array[i]);
+    }
+  }
+  console.log(girls);
+  console.log(boys);
+}
+battleOfTheSexes(battingLineUp);
+
 // 35. Prompt a user to enter their phone number. Write a function that outputs their phone number in a pretty format like:
 //     (555) 883-3985
 //     Alert the user if they have entered anything except a 10 digit number.
+//var userPhone = prompt('Please enter a 10 digit phone number.');
+
+function phoneOutput(number){
+  if(number.length !== 10 ){
+    console.log("That is not a 10 digit number!");
+  }
+  else{
+  firstPart = '(' + number.slice(0, 3) + ')';
+  secondPart = firstPart + number.slice(3,6) + '-' + number.slice(6,11);
+  console.log(secondPart);
+  }
+}
+
+//phoneOutput(userPhone);
+
+
 // 36. Write a helpufl tipping function that accepts two parameters, the bill amount and service score based on a scale of 1-10.
 //     The output should be the bill, the tip, and the total amount.
 //     Service score 1-3 denotes a 10% tip. 4-6 = 15%, 7-9 = 20%, 10 = 50%.
+//var userAnswer = prompt('Please enter your bill total, followed by the service score based on a scale from 1-10.');
+
+function tipperHelper(billTotal, serviceScore){
+serviceScore = parseInt(serviceScore);
+billTotal = parseInt(billTotal);
+if(serviceScore === 1 || serviceScore === 2 || serviceScore === 3){
+  var tip =  billTotal * .10;
+  var total = tip + billTotal;
+  console.log( "Your bill was " + billTotal + "," + " plus a 10% tip " + tip + " would total " + total + '.');
+}
+else if(serviceScore === 4 || serviceScore === 5 || serviceScore === 6){
+  var tip = billTotal * .15;
+  var total = tip + billTotal;
+  console.log( "Your bill was " + billTotal + "," + " plus a 15% tip " + tip + " would total " + total + '.');
+}
+else{
+  var tip = billTotal * .50;
+  var total = tip + billTotal;
+  console.log( "Your bill was " + billTotal + "," + " plus a 50% tip " + tip + " would total " + total + '.');
+}
+
+}
+
+//tipperHelper(userAnswer);
+
 // 37. Create a function that determines whether a parameter is a number or not.
 //     Iterate over the elements in the following array to determine if each is a number.
        arrayOfSchtuff = ["four", 55, {myDog: "Scranton"}, "fifty-one", 21, 398577729, "3,333"]
+//(isNaN(arrayOfSchtuff[i]))
+
+function numberOrNot(array){
+  for(i=0; i<array.length; i++){
+    array[i] = parseInt(array[i]);
+    if(isNaN(array[i])){
+      console.log('Not a number');
+    }
+    else{
+      console.log('It is a number!')
+    }
+  }
+}
+
+numberOrNot(arrayOfSchtuff);
+
 // 38. Use a function to ask a user for a US Dollar amount and converts it to Canadian Dollars.
+//var userCurrency =  prompt('Would you like to covert to Euros or the Canadian Dollar? Enter E for Euros and C for Canadian Dollar.');
+
+//var userMoney = prompt('Please enter a US Dollar to see what it is worth.');
+
+/*function usToCanadian(userAnswerCurrency, userAnswerMoney){
+  userAnswerMoney = parseInt(userAnswerMoney);
+  if(userAnswerCurrency === 'C'){
+    canadianCurreny = userAnswerMoney * 1.295;
+    console.log('C$' + canadianCurreny);
+  }
+  else{
+    euro = userAnswerMoney * .875;
+    console.log('€' + euro);
+  }
+}*/
+
+//usToCanadian(userCurrency, userMoney);
+
 // 39. Add the option of converting to Euros. First ask the user which currency they want the conversion for, then ask for the dollar amount.
 // 40. Write a function that returns an object of duplicate letters in an string.
 //     "Baby Aaron" should return {"b":2, "a":3}
+function duplicates(string){
+  var freq = {};
+  var count = 0;
+  for(i = 0; i< string.length; i++){
+    string = string.toLowerCase().split("").sort().join("");
+    console.log(string);
+}
+}
+
+
+duplicates('Hey there Delilah');
+//should output {'e': 4 , 'h': 2, 'l':2 }
+
+
+
+/*function howManyRepeated(str){
+   try{ return str.toLowerCase().split("").sort().join("").match(/(.)\1+/g).length; }
+   catch(e){ return 0; } // if TypeError
+}
+console.log(howManyRepeated("Indivisibilities")); // 2*/
+
 // BONUS: Write a function named pluralize that takes 2 arguments, a noun and a number. It returns the number and pluralized form, like "5 cats" or "1 dog".
 //        Make it handle a few collective nouns like "sheep" and "geese"
 //
@@ -207,23 +366,57 @@ for(counter = 0; counter<6; counter++){
 $(document).ready(function(){
 
 // 42. Turn the square into a circle.
-
+$('.square').addClass('circle');
 // 43. When the 'Fade' button is clicked, have your circle fade in/out with any speed you like.
 //     Hint: http://api.jquery.com/fadetoggle/
+$('#fader').click(function(){
+$('.square, .circle').fadeToggle('slow', 'linear');
+});
+
 
 // 44. Put your name on the page.
-
+$('<h2>' + 'Jessica' + '</h2>' ).appendTo('#name');
 // 45. Add some flair to your name when you click the 'Stylize!' button.
+
+$('button').click(function(){
+  $('h2').css('font-size', '55px');
+  $('h2').css('color', 'purple');
+});
+
 //     Feel free to edit the HTML however you see fit.
 
 // 46. Create as many pacman clones as you see fit.
+$('#pac').mouseover(function(){
+  var e = $('#pac');
+  for(i=0;i<10;i++){
+    e.clone().insertAfter(e);
+  }
+});
+
 
 // 47. Add the class 'invisible' to each list item when they are hovered over.
+$("#hoverHide").mouseover(function() {
+  $('li').css('visibility', 'hidden');
+});
+
 
 // 48. When either square is clicked, have them swap colors.
+$('.colorSwap.left').click(function(){
+  $(this).css('background-color', '#FCDC3B');
+  $('.colorSwap.right').css('background-color', '#458B00');
+});
+$('.colorSwap.right').click(function(){
+  $(this).css('background-color', '#458B00');
+  $('.colorSwap.left').css('background-color', '#FCDC3B');
+});
 
 // 49. When you click the vertical button, the squares above should align vertically.
+$('.vertical').click(function(){
+  $('.colorSwap').css('display', 'block' );
+})
 
 // 50. Unhide the message.
+$('.fin').css('display', 'inline');
+
 
 });
